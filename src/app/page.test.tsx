@@ -17,7 +17,7 @@ jest.mock('next/link', () => ({
 describe('Home', () => {
   it('renders the main heading', () => {
     render(<Home />)
-    expect(screen.getByText('Organize Your Life')).toBeInTheDocument()
+    expect(screen.getByText('A clear place for your tasks')).toBeInTheDocument()
   })
 
   it('renders navigation links', () => {
@@ -37,7 +37,7 @@ describe('Home', () => {
     render(<Home />)
     expect(screen.getByText('Focus on what matters with our minimalist design.')).toBeInTheDocument()
     expect(screen.getByText('Keep track of your tasks with our powerful organization tools.')).toBeInTheDocument()
-    expect(screen.getByText('Try the task workflow without signing up. Data stays in this session.')).toBeInTheDocument()
+    expect(screen.getByText('Tasks stay in this browser after reload. Export a backup whenever you need one.')).toBeInTheDocument()
   })
 
   it('renders the get started button', () => {
@@ -49,7 +49,7 @@ describe('Home', () => {
 
   it('renders the app description', () => {
     render(<Home />)
-    expect(screen.getByText('A frontend demo for creating, filtering, and sorting tasks. No account needed. Tasks reset when you reload.')).toBeInTheDocument()
+    expect(screen.getByText('Create, filter and sort tasks without an account. Your list stays in this browser, with JSON backups when you need to move it.')).toBeInTheDocument()
   })
 
   it('renders the logo with correct link', () => {

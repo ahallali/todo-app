@@ -32,7 +32,7 @@ const TodoForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4"
+      className="mb-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4"
     >
       <div className="space-y-4">
         <div className="relative">
@@ -42,6 +42,7 @@ const TodoForm: React.FC = () => {
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter a new task"
             aria-label="New task title"
+            maxLength={200}
             className="w-full p-3 pl-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300"
           />
           <svg
@@ -65,6 +66,8 @@ const TodoForm: React.FC = () => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Add a description (optional)"
+              aria-label="Task description"
+              maxLength={5000}
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 resize-none"
               rows={3}
             />
@@ -87,7 +90,7 @@ const TodoForm: React.FC = () => {
             aria-label="Add new todo"
             className={`px-4 py-2 rounded-lg transition-all duration-300 ${
               title.trim()
-                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl'
+                ? 'bg-blue-700 text-white '
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
             }`}
           >
