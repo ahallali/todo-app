@@ -30,7 +30,7 @@ const SignUpPage = () => {
       if (result.success) {
         router.push('/login');
       }
-    } catch (error) {
+    } catch {
       setError('Failed to create account. Please try again.');
     } finally {
       setLoading(false);

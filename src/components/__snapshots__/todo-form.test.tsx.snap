@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoForm renders correctly 1`] = `
+<div>
+  <form
+    class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4"
+  >
+    <div
+      class="space-y-4"
+    >
+      <div
+        class="relative"
+      >
+        <input
+          aria-label="New task title"
+          class="w-full p-3 pl-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300"
+          placeholder="Enter a new task"
+          type="text"
+          value=""
+        />
+        <svg
+          class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="flex flex-wrap gap-2 justify-between items-center"
+      >
+        <button
+          aria-label="Add description"
+          class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-300"
+          type="button"
+        >
+          Add description
+        </button>
+        <button
+          aria-label="Add new todo"
+          class="px-4 py-2 rounded-lg transition-all duration-300 bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed"
+          disabled=""
+          type="submit"
+        >
+          Add Todo
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`TodoForm renders with error state 1`] = `
+<div>
+  <form
+    class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4"
+  >
+    <div
+      class="space-y-4"
+    >
+      <div
+        class="relative"
+      >
+        <input
+          aria-label="New task title"
+          class="w-full p-3 pl-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300"
+          placeholder="Enter a new task"
+          type="text"
+          value=""
+        />
+        <svg
+          class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="flex flex-wrap gap-2 justify-between items-center"
+      >
+        <button
+          aria-label="Add description"
+          class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-300"
+          type="button"
+        >
+          Add description
+        </button>
+        <button
+          aria-label="Add new todo"
+          class="px-4 py-2 rounded-lg transition-all duration-300 bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed"
+          disabled=""
+          type="submit"
+        >
+          Add Todo
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`TodoForm renders with input value 1`] = `
+<div>
+  <form
+    class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4"
+  >
+    <div
+      class="space-y-4"
+    >
+      <div
+        class="relative"
+      >
+        <input
+          aria-label="New task title"
+          class="w-full p-3 pl-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300"
+          placeholder="Enter a new task"
+          type="text"
+          value="Test Todo"
+        />
+        <svg
+          class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="flex flex-wrap gap-2 justify-between items-center"
+      >
+        <button
+          aria-label="Add description"
+          class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-300"
+          type="button"
+        >
+          Add description
+        </button>
+        <button
+          aria-label="Add new todo"
+          class="px-4 py-2 rounded-lg transition-all duration-300 bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl"
+          type="submit"
+        >
+          Add Todo
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

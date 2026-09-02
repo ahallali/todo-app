@@ -1,7 +1,7 @@
 import todoReducer, { addTodo, toggleTodo, deleteTodo, setFilter, setSearchQuery, setSortField, setSortOrder, editTodo, clearCompleted, toggleAll, resetStore } from './todoSlice'
 
 describe('todoSlice', () => {
-  const initialState = {
+  const initialState: ReturnType<typeof todoReducer> = {
     todos: [],
     filter: 'all',
     searchQuery: '',
@@ -31,7 +31,7 @@ describe('todoSlice', () => {
       completed: false,
       createdAt: new Date().toISOString()
     }
-    const state = {
+    const state: ReturnType<typeof todoReducer> = {
       ...initialState,
       todos: [todo]
     }
@@ -46,7 +46,7 @@ describe('todoSlice', () => {
       completed: false,
       createdAt: new Date().toISOString()
     }
-    const state = {
+    const state: ReturnType<typeof todoReducer> = {
       ...initialState,
       todos: [todo]
     }
@@ -81,7 +81,7 @@ describe('todoSlice', () => {
       completed: false,
       createdAt: new Date().toISOString()
     }
-    const state = {
+    const state: ReturnType<typeof todoReducer> = {
       ...initialState,
       todos: [todo]
     }
@@ -110,7 +110,7 @@ describe('todoSlice', () => {
         createdAt: new Date().toISOString()
       }
     ]
-    const state = {
+    const state: ReturnType<typeof todoReducer> = {
       ...initialState,
       todos
     }
@@ -134,7 +134,7 @@ describe('todoSlice', () => {
         createdAt: new Date().toISOString()
       }
     ]
-    const state = {
+    const state: ReturnType<typeof todoReducer> = {
       ...initialState,
       todos
     }
@@ -147,7 +147,7 @@ describe('todoSlice', () => {
   })
 
   it('should handle resetStore', () => {
-    const state = {
+    const state: ReturnType<typeof todoReducer> = {
       todos: [
         {
           id: '1',

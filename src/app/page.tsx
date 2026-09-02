@@ -1,11 +1,8 @@
 'use client'
-import { useTheme } from "@/components/ThemeProvider";
-import Image from "next/image";
 import Link from 'next/link';
 
 
 export default function Home() {
-  const { theme } = useTheme();
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,26 +12,26 @@ export default function Home() {
           </div>
           <div className="flex space-x-4">
             <Link
-              href="/login"
+              href="/todos"
               className="px-4 py-2 rounded-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              Login
+              Try demo
             </Link>
             <Link
-              href="/signup"
+              href="/todos"
               className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Sign Up
+              Open tasks
             </Link>
           </div>
         </nav>
 
         <div className="mt-20 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 py-8">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 py-8">
             Organize Your Life
           </h1>
           <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A beautiful and intuitive todo app to help you stay organized and productive.
+            A frontend demo for creating, filtering, and sorting tasks. No account needed. Tasks reset when you reload.
           </p>
         </div>
 
@@ -59,8 +56,8 @@ export default function Home() {
               ),
             },
             {
-              title: 'Access Anywhere',
-              description: 'Your todos are always with you, on any device.',
+              title: 'Try It Freely',
+              description: 'Try the task workflow without signing up. Data stays in this session.',
               icon: (
                 <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -82,7 +79,7 @@ export default function Home() {
 
         <div className="mt-16 pb-20 text-center">
           <Link
-            href="/signup"
+            href="/todos"
             className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Get Started

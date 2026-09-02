@@ -2,13 +2,14 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import ThemeButton from './ThemeButton'
 import '@testing-library/jest-dom'
 import { ThemeProvider } from './ThemeProvider'
+import { useTheme } from './ThemeProvider'
 
 jest.mock('./ThemeProvider', () => ({
   ThemeProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-  useTheme: () => ({
+  useTheme: jest.fn(() => ({
     theme: 'light',
     ButtonTheme: jest.fn(),
-  }),
+  })),
 }))
 
 describe('ThemeButton', () => {
@@ -29,7 +30,7 @@ describe('ThemeButton', () => {
 
   it('toggles theme when clicked', () => {
     const mockButtonTheme = jest.fn()
-    jest.spyOn(require('./ThemeProvider'), 'useTheme').mockReturnValue({
+    jest.mocked(useTheme).mockReturnValue({
       theme: 'light',
       ButtonTheme: mockButtonTheme,
     })
@@ -46,7 +47,7 @@ describe('ThemeButton', () => {
   })
 
   it('renders sun icon in dark theme', () => {
-    jest.spyOn(require('./ThemeProvider'), 'useTheme').mockReturnValue({
+    jest.mocked(useTheme).mockReturnValue({
       theme: 'dark',
       ButtonTheme: jest.fn(),
     })
@@ -64,7 +65,7 @@ describe('ThemeButton', () => {
   })
 
   it('renders moon icon in light theme', () => {
-    jest.spyOn(require('./ThemeProvider'), 'useTheme').mockReturnValue({
+    jest.mocked(useTheme).mockReturnValue({
       theme: 'light',
       ButtonTheme: jest.fn(),
     })

@@ -71,7 +71,7 @@ const TodoForm: React.FC = () => {
           </div>
         )}
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap gap-2 justify-between items-center">
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}

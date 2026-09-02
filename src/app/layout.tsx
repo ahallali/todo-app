@@ -1,25 +1,7 @@
-'use client';
 import "./globals.css";
-import { Provider } from 'react-redux';
-import { store } from '@/store/store';
-import { ThemeProvider } from '@/components/ThemeProvider';
-import ThemeButton from '@/components/ThemeButton';
+import AppProviders from '@/components/AppProviders';
+export { metadata } from './metadata';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        <Provider store={store}>
-          <ThemeProvider>
-            <ThemeButton />
-            {children}
-          </ThemeProvider>
-        </Provider>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="en"><body><AppProviders>{children}</AppProviders></body></html>;
 }

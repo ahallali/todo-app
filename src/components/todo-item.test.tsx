@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@/utils/test-utils'
 import TodoItem from '@/components/TodoItem'
-import { toggleTodo, deleteTodo, editTodo } from '@/store/slices/todoSlice'
 import '@testing-library/jest-dom'
 import { RootState } from '@/store/store'
 import userEvent from '@testing-library/user-event'

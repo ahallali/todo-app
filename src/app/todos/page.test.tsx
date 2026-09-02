@@ -1,8 +1,7 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import TodosPage from './page'
-import { useAppDispatch, useAppSelector } from '@/lib/dispatch'
-import { toggleTodo, deleteTodo, setFilter, clearCompleted, toggleAll, setSearchQuery, setSortField, setSortOrder, resetStore } from '@/store/slices/todoSlice'
+import { setSortField, setSortOrder, resetStore } from '@/store/slices/todoSlice'
 import '@testing-library/jest-dom'
 import { act } from 'react'
 import { Provider } from 'react-redux'
@@ -32,7 +31,7 @@ jest.mock('@/components/TodoForm', () => ({
 
 jest.mock('@/components/TodoItem', () => ({
   __esModule: true,
-  default: ({ todo }: { todo: any }) => (
+  default: ({ todo }: { todo: import('@/store/slices/todoSlice').Todo }) => (
     <div data-testid={`todo-item-${todo.id}`}>{todo.title}</div>
   ),
 }))
@@ -146,7 +145,7 @@ describe('TodosPage', () => {
     expect(state.todos.todos.every(todo => todo.completed)).toBe(true)
   })
 
-  it('handles logout', async () => {
+  it('resets the demo without clearing unrelated browser storage', async () => {
     const mockLocalStorage = {
       clear: jest.fn(),
     }
@@ -156,12 +155,12 @@ describe('TodosPage', () => {
 
     renderWithRedux(<TodosPage />)
     
-    const logoutButton = screen.getByText('Logout')
+    const logoutButton = screen.getByText('Reset demo')
     await act(async () => {
       fireEvent.click(logoutButton)
     })
 
-    expect(mockLocalStorage.clear).toHaveBeenCalled()
+    expect(mockLocalStorage.clear).not.toHaveBeenCalled()
     const state = store.getState()
     expect(state.todos.todos).toHaveLength(0)
   })

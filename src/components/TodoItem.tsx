@@ -54,7 +54,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
           role="checkbox"
           aria-checked={todo.completed}
           aria-label={`Mark "${todo.title}" as ${todo.completed ? 'incomplete' : 'complete'}`}
-          className={`mt-1 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-300 ${
+          className={`mt-1 shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-300 ${
             todo.completed
               ? 'bg-gradient-to-r from-green-400 to-blue-500 border-transparent'
               : 'border-gray-300 dark:border-gray-600 hover:border-blue-500'
@@ -124,7 +124,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
           )}
         </div>
 
-        <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex items-center space-x-2 opacity-100 transition-opacity duration-300">
           {isEditing ? (
             <>
               <button

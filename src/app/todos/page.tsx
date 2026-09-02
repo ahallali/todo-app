@@ -1,13 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/lib/dispatch';
-import { toggleTodo, deleteTodo, setFilter , clearCompleted , toggleAll , setSearchQuery , setSortField , setSortOrder , resetStore } from '@/store/slices/todoSlice';
+import { setFilter , clearCompleted , toggleAll , setSearchQuery , resetStore } from '@/store/slices/todoSlice';
 import TodoForm from '@/components/TodoForm';
 import TodoItem from '@/components/TodoItem';
 import { useState } from 'react';
 import SortControls from '@/components/SortControls';
-import { useTheme } from '@/components/ThemeProvider';
 import { useRouter } from 'next/navigation';
 
 
@@ -16,14 +14,11 @@ export default function TodosPage() {
   const router = useRouter();
   const todos = useAppSelector((state) => state.todos.todos);
   const {filter,  searchQuery , sortField, sortOrder } = useAppSelector((state) => state.todos);
-  const allCompleted = todos.length > 0 && todos.every(todo => todo.completed);
   const [showError, setShowError] = useState(false);
-  const { theme } = useTheme();
 
   const handleLogout = () => {
-    localStorage.clear();
     dispatch(resetStore());
-    router.push('/login');
+    router.push('/');
   };
 
   const handleFilterChange = (newFilter: 'all' | 'active' | 'completed') => {
@@ -33,7 +28,7 @@ export default function TodosPage() {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     dispatch(setSearchQuery(value));
-    setShowError(value !== '' && filteredTodos.length === 0);
+    setShowError(value !== '' && !todos.some(todo => (filter === 'all' || (filter === 'active' && !todo.completed) || (filter === 'completed' && todo.completed)) && todo.title.toLowerCase().includes(value.toLowerCase())));
   };
 
 
@@ -72,10 +67,11 @@ export default function TodosPage() {
               onClick={handleLogout}
               className="px-4 py-2 rounded-lg bg-red-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-red-600"
             >
-              Logout
+              Reset demo
             </button>
           </div>
         </div>
+        <p className="mb-6 text-sm text-gray-600 dark:text-gray-300">Frontend demo · No account needed. Tasks reset when you reload or reset the demo.</p>
         <div className="relative">
               <input
                 type="text"
@@ -95,8 +91,8 @@ export default function TodosPage() {
 
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
           <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-center">
-              <div className="flex gap-2">
+            <div className="flex flex-wrap gap-3 justify-between items-center">
+              <div className="flex flex-wrap gap-2">
                 {['all', 'active', 'completed'].map((f) => (
                   <button
                     key={f}

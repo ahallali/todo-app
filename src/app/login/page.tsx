@@ -30,7 +30,7 @@ const LoginPage = () => {
       if (result.success) {
         router.push('/todos');
       }
-    } catch (error) {
+    } catch {
       setError('Invalid email or password');
     } finally {
       setLoading(false);
@@ -118,7 +118,7 @@ const LoginPage = () => {
 
             <div className="mt-6 text-center">
               <p className="text-gray-600 dark:text-gray-300">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link
                   href="/signup"
                   className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300"

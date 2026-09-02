@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem renders completed todo correctly 1`] = `
+<div>
+  <div
+    class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 transition-all duration-300 hover:shadow-md"
+  >
+    <div
+      class="flex items-start space-x-4"
+    >
+      <button
+        aria-checked="true"
+        aria-label="Mark "Test Todo" as incomplete"
+        class="mt-1 shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-300 bg-gradient-to-r from-green-400 to-blue-500 border-transparent"
+        role="checkbox"
+      >
+        <svg
+          class="w-4 h-4 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M5 13l4 4L19 7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <div
+        class="flex-1 min-w-0"
+      >
+        <div
+          class="space-y-1"
+        >
+          <div
+            class="text-lg font-medium transition-colors duration-300 break-words line-through text-gray-400 dark:text-gray-500"
+          >
+            Test Todo
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center space-x-2 opacity-100 transition-opacity duration-300"
+      >
+        <button
+          aria-label="Edit "Test Todo""
+          class="p-2 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Delete "Test Todo""
+          class="p-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors duration-300"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TodoItem renders correctly 1`] = `
+<div>
+  <div
+    class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 transition-all duration-300 hover:shadow-md"
+  >
+    <div
+      class="flex items-start space-x-4"
+    >
+      <button
+        aria-checked="false"
+        aria-label="Mark "Test Todo" as complete"
+        class="mt-1 shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-300 border-gray-300 dark:border-gray-600 hover:border-blue-500"
+        role="checkbox"
+      />
+      <div
+        class="flex-1 min-w-0"
+      >
+        <div
+          class="space-y-1"
+        >
+          <div
+            class="text-lg font-medium transition-colors duration-300 break-words text-gray-800 dark:text-gray-200"
+          >
+            Test Todo
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center space-x-2 opacity-100 transition-opacity duration-300"
+      >
+        <button
+          aria-label="Edit "Test Todo""
+          class="p-2 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Delete "Test Todo""
+          class="p-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors duration-300"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TodoItem renders in edit mode correctly 1`] = `
+<div>
+  <div
+    class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4 transition-all duration-300 hover:shadow-md"
+  >
+    <div
+      class="flex items-start space-x-4"
+    >
+      <button
+        aria-checked="false"
+        aria-label="Mark "Test Todo" as complete"
+        class="mt-1 shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-300 border-gray-300 dark:border-gray-600 hover:border-blue-500"
+        role="checkbox"
+      />
+      <div
+        class="flex-1 min-w-0"
+      >
+        <div
+          class="space-y-2"
+        >
+          <input
+            class="w-full bg-transparent border-b-2 mb-2 border-blue-500 focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 text-lg font-medium break-words"
+            type="text"
+            value="Test Todo"
+          />
+          <textarea
+            class="w-full bg-transparent border-b border-gray-200 dark:border-gray-700 focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 resize-none text-sm break-words whitespace-pre-wrap"
+            placeholder="Add a description (optional)"
+            rows="1"
+          >
+            Test Description
+          </textarea>
+        </div>
+      </div>
+      <div
+        class="flex items-center space-x-2 opacity-100 transition-opacity duration-300"
+      >
+        <button
+          aria-label="Save changes"
+          class="p-2 text-green-500 hover:text-green-600 dark:text-green-400 dark:hover:text-green-300 transition-colors duration-300"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 13l4 4L19 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Cancel editing"
+          class="p-2 text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors duration-300"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 18L18 6M6 6l12 12"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

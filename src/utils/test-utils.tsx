@@ -5,7 +5,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import { rootReducer } from '@/store/store'
 import type { RenderOptions } from '@testing-library/react'
 import type { StateFromReducersMapObject } from '@reduxjs/toolkit'
-import type { RootState } from '@/store/store'
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: Partial<StateFromReducersMapObject<typeof rootReducer>>
@@ -23,7 +22,7 @@ export function renderWithProviders(
     ...renderOptions
   }: ExtendedRenderOptions = {}
 ) {
-  function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+  function Wrapper({ children }: PropsWithChildren): JSX.Element {
     return <Provider store={store}>{children}</Provider>
   }
 

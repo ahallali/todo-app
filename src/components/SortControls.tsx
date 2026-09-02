@@ -17,8 +17,8 @@ const SortControls: React.FC = () => {
   };
 
   return (
-    <div className="flex gap-4 mb-4">
-      <div className="flex-1">
+    <div className="flex flex-col sm:flex-row gap-4 my-4">
+      <div className="flex-1 min-w-0">
         <label htmlFor="sortField" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Sort by
         </label>
@@ -33,7 +33,7 @@ const SortControls: React.FC = () => {
           <option value="completed">Completion Status</option>
         </select>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         <label htmlFor="sortOrder" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Order
         </label>

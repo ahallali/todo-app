@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortControls changes sort field when select is changed 1`] = `
+<div>
+  <div
+    class="flex flex-col sm:flex-row gap-4 my-4"
+  >
+    <div
+      class="flex-1 min-w-0"
+    >
+      <label
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        for="sortField"
+      >
+        Sort by
+      </label>
+      <select
+        class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        id="sortField"
+      >
+        <option
+          value="title"
+        >
+          Title
+        </option>
+        <option
+          value="createdAt"
+        >
+          Date Created
+        </option>
+        <option
+          value="completed"
+        >
+          Completion Status
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <label
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        for="sortOrder"
+      >
+        Order
+      </label>
+      <select
+        class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        id="sortOrder"
+      >
+        <option
+          value="asc"
+        >
+          Ascending
+        </option>
+        <option
+          value="desc"
+        >
+          Descending
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortControls changes sort order when select is changed 1`] = `
+<div>
+  <div
+    class="flex flex-col sm:flex-row gap-4 my-4"
+  >
+    <div
+      class="flex-1 min-w-0"
+    >
+      <label
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        for="sortField"
+      >
+        Sort by
+      </label>
+      <select
+        class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        id="sortField"
+      >
+        <option
+          value="title"
+        >
+          Title
+        </option>
+        <option
+          value="createdAt"
+        >
+          Date Created
+        </option>
+        <option
+          value="completed"
+        >
+          Completion Status
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <label
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        for="sortOrder"
+      >
+        Order
+      </label>
+      <select
+        class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        id="sortOrder"
+      >
+        <option
+          value="asc"
+        >
+          Ascending
+        </option>
+        <option
+          value="desc"
+        >
+          Descending
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortControls renders correctly 1`] = `
+<div>
+  <div
+    class="flex flex-col sm:flex-row gap-4 my-4"
+  >
+    <div
+      class="flex-1 min-w-0"
+    >
+      <label
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        for="sortField"
+      >
+        Sort by
+      </label>
+      <select
+        class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        id="sortField"
+      >
+        <option
+          value="title"
+        >
+          Title
+        </option>
+        <option
+          value="createdAt"
+        >
+          Date Created
+        </option>
+        <option
+          value="completed"
+        >
+          Completion Status
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex-1 min-w-0"
+    >
+      <label
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        for="sortOrder"
+      >
+        Order
+      </label>
+      <select
+        class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        id="sortOrder"
+      >
+        <option
+          value="asc"
+        >
+          Ascending
+        </option>
+        <option
+          value="desc"
+        >
+          Descending
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;
