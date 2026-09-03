@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center py-6">
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
@@ -19,7 +19,7 @@ export default function Home() {
             </Link>
             <Link
               href="/todos"
-              className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-4 py-2 rounded-lg bg-blue-700 text-white  transition-all duration-300"
             >
               Open tasks
             </Link>
@@ -27,11 +27,11 @@ export default function Home() {
         </nav>
 
         <div className="mt-20 text-center">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 py-8">
-            Organize Your Life
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-950 dark:text-gray-50 py-8">
+            A clear place for your tasks
           </h1>
           <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A frontend demo for creating, filtering, and sorting tasks. No account needed. Tasks reset when you reload.
+            Create, filter and sort tasks without an account. Your list stays in this browser, with JSON backups when you need to move it.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
             },
             {
               title: 'Try It Freely',
-              description: 'Try the task workflow without signing up. Data stays in this session.',
+              description: 'Tasks stay in this browser after reload. Export a backup whenever you need one.',
               icon: (
                 <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -67,7 +67,7 @@ export default function Home() {
           ].map((feature, index) => (
             <div
               key={index}
-              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="p-6 bg-white dark:bg-gray-800 rounded-xl  transition-all duration-300"
             >
               <div className="text-blue-500 dark:text-blue-400 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">{feature.title}</h3>
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="mt-16 pb-20 text-center">
           <Link
             href="/todos"
-            className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-block px-8 py-4 rounded-lg bg-blue-700 text-white text-lg font-semibold  transition-all duration-300"
           >
             Get Started
           </Link>

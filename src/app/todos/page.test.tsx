@@ -146,6 +146,7 @@ describe('TodosPage', () => {
   })
 
   it('resets the demo without clearing unrelated browser storage', async () => {
+    jest.spyOn(window, 'confirm').mockReturnValueOnce(true)
     const mockLocalStorage = {
       clear: jest.fn(),
     }

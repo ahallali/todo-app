@@ -2,6 +2,7 @@
 
 import { useAppDispatch, useAppSelector } from '@/lib/dispatch';
 import { setFilter , clearCompleted , toggleAll , setSearchQuery , resetStore } from '@/store/slices/todoSlice';
+import TaskBackup from '@/components/TaskBackup';
 import TodoForm from '@/components/TodoForm';
 import TodoItem from '@/components/TodoItem';
 import { useState } from 'react';
@@ -17,6 +18,7 @@ export default function TodosPage() {
   const [showError, setShowError] = useState(false);
 
   const handleLogout = () => {
+    if (!window.confirm('Delete all tasks saved in this browser? Export a backup first if you want to keep them.')) return;
     dispatch(resetStore());
     router.push('/');
   };
@@ -56,25 +58,26 @@ export default function TodosPage() {
     });
 
   return (
-    <div className="min-h-screen py-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen py-8 bg-gray-50 dark:bg-gray-950">
       <div className="max-w-2xl mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+          <h1 className="text-4xl font-bold text-gray-950 dark:text-gray-50">
             Todo App
           </h1>
           <div className="flex flex-col sm:flex-row sm:items-center gap-2">
             <button 
               onClick={handleLogout}
-              className="px-4 py-2 rounded-lg bg-red-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-red-600"
+              className="px-4 py-2 rounded-lg bg-red-500 text-white  transition-all duration-300 hover:bg-red-600"
             >
               Reset demo
             </button>
           </div>
         </div>
-        <p className="mb-6 text-sm text-gray-600 dark:text-gray-300">Frontend demo · No account needed. Tasks reset when you reload or reset the demo.</p>
+        <p className="mb-6 text-sm text-gray-600 dark:text-gray-300">No account needed. Tasks are saved in this browser. Export a backup to move them to another device.</p>
         <div className="relative">
               <input
                 type="text"
+                aria-label="Search tasks"
                 placeholder="Search todos..."
                 value={ searchQuery }
                 onChange={handleSearchChange}
@@ -86,20 +89,22 @@ export default function TodosPage() {
             No todos found matching your search
           </div>
         )}
+        <TaskBackup />
         <SortControls />
         <TodoForm />
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4">
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap gap-3 justify-between items-center">
               <div className="flex flex-wrap gap-2">
                 {['all', 'active', 'completed'].map((f) => (
                   <button
                     key={f}
+                    aria-pressed={filter === f}
                     onClick={() => handleFilterChange(f as 'all' | 'active' | 'completed')}
                     className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                       filter === f
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg'
+                        ? 'bg-blue-700 text-white shadow-lg'
                         : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -110,6 +115,7 @@ export default function TodosPage() {
               <button
                 onClick={() => dispatch(clearCompleted())}
                 className="group relative p-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-colors duration-200 shadow-sm hover:shadow-md"
+                aria-label="Clear completed tasks"
                 title="Clear Completed"
               >
                 <svg
